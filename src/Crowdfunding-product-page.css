@@ -11,10 +11,21 @@
 
   /* --- FONTS --- */
 
+  font-size: 16px;
   text-rendering: optimizeLegibility;
+  font-family: "Commissioner";
+  font-weight: 500;
+  --Commissioner-ligth: 300;
+  --Commissioner-bold: 700;
 
   /* --- COLOR PALETTE --- */
 
+  --Moderate-cyan: hsl(176, 50%, 47%);
+  --Dark-cyan: hsl(176, 72%, 28%);
+  --Black: hsl(0, 0%, 5%);
+  --White: hsl(0, 0%, 95%);
+  --Dark-gray: hsl(0, 0%, 50%);
+  --Light-gray: hsl(0, 0%, 75%);
 }
 
 * {
@@ -33,10 +44,63 @@ ul, li {
   list-style-type: none;
 }
 
+h1, h2, h3 {
+  font-weight: var(--Commissioner-bold);
+  color: var(--Black);
+}
+
+h1 {
+  font-size: 1rem;
+  padding: 5% 0%;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 0.75rem;
+}
+
+h4 {
+  color: var(--Moderate-cyan);
+  font-size: 0.75rem;
+  padding: 5% 0%;
+}
+
+p {
+  color: var(--Dark-gray);
+  font-size: 0.75rem;
+  padding: 5% 0%;
+}
+
+strong {
+  color: var(--Black);
+  font-size: 1.25rem;
+  padding: 10% 0%;
+}
+
+progress {
+  accent-color: var(--Moderate-cyan);
+}
+
+input[type="number"] {
+  outline: none;
+  text-align: center;
+}
+
+hr {
+  margin: 5%;
+}
+
+.completed {
+  height: 60vh !important;
+}
+
 /* --- GENERAL CLASSES --- */
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .selectable:hover {
@@ -50,10 +114,6 @@ ul, li {
 
 .abs {
   position: absolute;
-}
-
-.fixed {
-  position: fixed;
 }
 
 .left {
@@ -75,7 +135,7 @@ ul, li {
 
 .flex-row {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 .flex-row.center,
@@ -90,10 +150,243 @@ ul, li {
   transform: translate(-50%, -50%);
 }
 
+.active {
+  border: 2px solid var(--Moderate-cyan) !important;
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.fixed {
+  overflow: hidden !important;
+}
+
 /* --- SPECIFIC CLASSES --- */
+
+.body {
+  min-width: 225px;
+}
+
+.header {
+  background-image: url("./images/image-hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100%;
+  color: var(--White);
+  padding: 5%;
+  height: 18rem;
+  width: 100%;
+  text-align: left;
+}
+
+.bars {
+  margin-top: 1%;
+}
+
+.main {
+  gap: 1rem;
+  width: 90%;
+  margin-top: -12.5%;
+}
+
+.mastercraft {
+  top: 0% !important;
+}
+
+.bookmark {
+  top: 1.5rem;
+}
+
+.separator {
+  width: 20%;
+  margin-left: 40%;
+}
+
+#bar {
+  width: 100%;
+}
+
+.card-2 {
+  gap: 5px;
+}
+
+.card-3 {
+  text-align: left;
+}
+
+.card-1,
+.card-2,
+.card-3 {
+  background-color: var(--White);
+  border: 1px solid var(--Light-gray);
+  border-radius: 0.5rem;
+  padding: 10% 5%;
+}
+
+.subcard-1,
+.subcard-2,
+.subcard-3,
+.formcard-1,
+.formcard-2,
+.formcard-3,
+.formcard-4,
+.completed {
+  border: 1px solid var(--Light-gray);
+  border-radius: 0.5rem;
+  padding: 5%;
+  margin: 5% 0%;
+}
+
+.subcard-3,
+.formcard-4 {
+  opacity: 0.33;
+}
+
+.button {
+  width: 10rem;
+  height: 2.5rem;
+  font-weight: var(--Commissioner-bold);
+  border-radius: 2rem;
+  margin: 5%;
+  margin-left: 0%;
+}
+
+.primary {
+  border: 1px solid var(--Moderate-cyan);
+  background-color: var(--Moderate-cyan);
+  color: var(--White);
+}
+
+.secondary  {
+  border: 1px solid var(--Light-gray);
+  background-color: var(--Light-gray);
+  color: var(--White);
+}
+
+.attribution {
+  font-size: 0.75rem;
+  font-weight: var(--Commissioner-ligth);
+  padding: 5% 0% 0%;
+}
+
+/* --- MODAL AND MENU --- */
+
+.modal {
+  position: fixed;
+  overflow: scroll;
+  top: 5%;
+  left: 5%;
+  width: 90vw;
+  height: 90vh;
+  z-index: 1;
+  background-color: white;
+  text-align: left;
+  padding: 5%;
+}
+
+.closeModalBtn {
+  margin-top: 5%;
+}
+
+.in {
+  display: inline;
+  padding: 5%;
+}
+
+.out {
+  padding: 5% 10%;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: var(--Dark-gray);
+}
+
+.number {
+  margin: 10% 0% 5% 0%;
+  width: 30%;
+  height: 2.5rem;
+  border: 1px solid var(--Light-gray);
+  border-radius: 2rem;  
+}
+
+.submitBtn {
+  margin: 10% 0% 5% 5%;
+  width: 60%;
+  height: 2.5rem;
+}
+
+.popup {
+  position: fixed;
+  overflow: scroll;
+  top: 10%;
+  left: 5%;
+  width: 90vw;
+  z-index: 1;
+  background-color: white;
+  text-align: left;
+  border-radius: 0.5rem;
+  padding: 5% 10%;
+  height: 15rem;
+}
+
+.popup > ul > li {
+  padding: 5%;
+}
+
+.closeMenuBtn {
+  position: fixed;
+  top: 3%;
+  right: 6%;
+}
 
 /* --- MEDIA QUERIES --- */
 
-@media screen and (width > 375px) {}
-
-@media screen and (width > 768px) {}
+@media screen and (width > 375px) {
+  .body {
+    min-width: 625px;
+  }
+  .header {
+    background-image: url("./images/image-hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 100%;
+  }
+  .main {
+    width: 75%;
+    margin-top: -7.5%;
+  }
+  .bookmark {
+    left: 2rem;
+  }
+  .nav > ul {
+    gap: 1rem;
+  }
+  .floating {
+    margin-top: -7.5%;
+  }
+  .floating.button {
+    margin-top: -7.5%;
+    margin-right: -2.5%;
+  }
+  .modal {
+    width: 75vw;
+  }
+  strong.floating.right {
+    margin-top: -40%;
+  }
+  .number {
+    display: inline;
+    width: 10%;
+    margin: 0% 5% 0% 65%;
+  }
+  .submitBtn {
+    display: inline;
+    width: 20%;
+    margin: 0%;
+  }
+  .completed {
+    height: 75% !important;
+  }
+}

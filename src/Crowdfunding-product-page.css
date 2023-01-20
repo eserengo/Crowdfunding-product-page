@@ -11,10 +11,21 @@
 
   /* --- FONTS --- */
 
+  font-size: 16px;
   text-rendering: optimizeLegibility;
+  font-family: "Commissioner";
+  font-weight: 500;
+  --Commissioner-ligth: 300;
+  --Commissioner-bold: 700;
 
   /* --- COLOR PALETTE --- */
 
+  --Moderate-cyan: hsl(176, 50%, 47%);
+  --Dark-cyan: hsl(176, 72%, 28%);
+  --Black: hsl(0, 0%, 5%);
+  --White: hsl(0, 0%, 95%);
+  --Dark-gray: hsl(0, 0%, 50%);
+  --Light-gray: hsl(0, 0%, 75%);
 }
 
 * {
@@ -33,10 +44,35 @@ ul, li {
   list-style-type: none;
 }
 
+h1, h2, h3 {
+  font-weight: var(--Commissioner-bold);
+  color: var(--Black);
+}
+
+h4 {
+  color: var(--Moderate-cyan);
+}
+
+p {
+  color: var(--Dark-gray);
+}
+
+strong {
+  color: var(--Black);
+}
+
+progress {
+  accent-color: var(--Moderate-cyan);
+}
+
+input[type="number"] {
+  outline: none;
+}
+
 /* --- GENERAL CLASSES --- */
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .selectable:hover {
@@ -52,8 +88,8 @@ ul, li {
   position: absolute;
 }
 
-.fixed {
-  position: fixed;
+.inline {
+  display: inline !important;
 }
 
 .left {
@@ -75,7 +111,7 @@ ul, li {
 
 .flex-row {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
 }
 
 .flex-row.center,
@@ -90,10 +126,115 @@ ul, li {
   transform: translate(-50%, -50%);
 }
 
+.active {
+  border: 2px solid var(--Moderate-cyan) !important;
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.fixed {
+  overflow: hidden !important;
+}
+
 /* --- SPECIFIC CLASSES --- */
+
+.header {
+  background-image: url("./images/image-hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 100%;
+  color: var(--White);
+
+  height: 20rem;
+}
+
+.main {
+  gap: 2rem;
+}
+
+.card-1,
+.card-2,
+.card-3 {
+  background-color: var(--White);
+  border: 1px solid var(--Light-gray);
+  border-radius: 0.5rem;
+  padding: 10% 5%;
+}
+
+.subcard-1,
+.subcard-2,
+.subcard-3,
+.formcard-1,
+.formcard-2,
+.formcard-3,
+.formcard-4,
+.completed {
+  border: 1px solid var(--Light-gray);
+  border-radius: 0.5rem;
+  padding: 5%;
+  margin: 5% 0%;
+}
+
+.subcard-3,
+.formcard-4 {
+  opacity: 0.33;
+}
+
+.button {
+  width: 10rem;
+  height: 2.5rem;
+  font-weight: var(--Commissioner-bold);
+  border-radius: 2rem;
+}
+
+.primary {
+  border: 1px solid var(--Moderate-cyan);
+  background-color: var(--Moderate-cyan);
+  color: var(--White);
+}
+
+.secondary  {
+  border: 1px solid var(--Light-gray);
+  background-color: var(--Light-gray);
+  color: var(--White);
+}
+
+.attribution {
+  font-size: 0.75rem;
+  font-weight: var(--Commissioner-ligth);
+  padding: 5% 0% 0%;
+}
+
+/* --- MODAL --- */
+
+.modal,
+.popup {
+  position: fixed;
+  overflow: auto;
+  top: 5%;
+  left: 5%;
+  width: 90vw;
+  z-index: 1;
+  background-color: white;
+}
+
+.closeMenuBtn {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+}
 
 /* --- MEDIA QUERIES --- */
 
-@media screen and (width > 375px) {}
+@media screen and (width > 375px) {
+  .header {
+    background-image: url("./images/image-hero-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 100%;
+  }
+}
 
 @media screen and (width > 768px) {}

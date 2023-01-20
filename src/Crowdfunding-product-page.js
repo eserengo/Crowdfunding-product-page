@@ -114,11 +114,6 @@ import { data } from "./data.js";
       document.querySelectorAll('.floating').forEach(item => {
         item.classList.remove('right');
       })
-      document.querySelector('.card-2').classList.remove('flex-row');
-      document.querySelector('.card-2').classList.add('flex-col');
-      document.querySelectorAll('.moving').forEach(item => {
-        item.classList.remove('inline');
-      })
     }
     if (window.matchMedia("(width>375px)").matches) {
       // RULES
@@ -130,11 +125,6 @@ import { data } from "./data.js";
       })
       document.querySelectorAll('.floating').forEach(item => {
         item.classList.add('right');
-      })
-      document.querySelector('.card-2').classList.remove('flex-col');
-      document.querySelector('.card-2').classList.add('flex-row');
-      document.querySelectorAll('.moving').forEach(item => {
-        item.classList.add('inline');
       })
     }
   }
